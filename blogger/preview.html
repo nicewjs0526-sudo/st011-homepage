@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>미리보기 · okluckday9009 모바일 테마</title>
+<!-- okluckday-theme.xml 을 브라우저에서 미리 보는 정적 사본입니다 (Blogger 태그 제거, 이미지 로컬경로) -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f0b16;--panel:#181423;--soft:#221b31;--line:#332a46;--ink:#f5f5f7;--muted:#a1a1b5;--gold:#f5c451;--red:#e43a44;--purple:#8b5cf6;--radius:16px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Noto Sans KR',system-ui,-apple-system,'Malgun Gothic',sans-serif;font-size:16px;line-height:1.7;word-break:keep-all;overflow-wrap:break-word}
+a{color:inherit;text-decoration:none}img{max-width:100%;height:auto;display:block}iframe{max-width:100%;border:0}
+.ok-top{position:sticky;top:0;z-index:20;background:rgba(15,11,22,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.ok-top__in{width:min(760px,100%);margin:0 auto;display:flex;align-items:center;gap:10px;padding:10px 14px}
+.ok-brand{display:flex;align-items:center;gap:8px;font-weight:900;white-space:nowrap;font-size:15px}
+.ok-brand i{display:grid;place-items:center;width:28px;height:28px;border-radius:9px;background:linear-gradient(135deg,var(--purple),var(--red));font-style:normal;font-size:15px}
+.ok-nav{margin-left:auto;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:2px}
+.ok-nav::-webkit-scrollbar{display:none}
+.ok-nav a{flex:0 0 auto;padding:7px 12px;border-radius:999px;background:var(--soft);border:1px solid var(--line);color:var(--muted);font-size:13px;font-weight:700}
+.ok-nav a:hover{color:#fff;border-color:var(--purple)}
+.ok-nav a.ok-nav--cta{background:linear-gradient(135deg,var(--red),#ff6b6b);color:#fff;border-color:transparent}
+.ok-hero{position:relative}
+.ok-hero__art{display:block;line-height:0}
+.ok-hero__art img{width:100%;aspect-ratio:1600/864;object-fit:cover;object-position:center}
+.ok-hero__art:after{content:'';position:absolute;left:0;right:0;bottom:0;height:38%;background:linear-gradient(180deg,rgba(15,11,22,0),var(--bg));pointer-events:none}
+.ok-hero__card{width:min(760px,calc(100% - 28px));margin:-30px auto 0;position:relative;z-index:1;display:flex;gap:14px;padding:16px;background:linear-gradient(160deg,#1d1530,#140f20);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 18px 40px -20px rgba(0,0,0,.85)}
+.ok-hero__cover{flex:0 0 92px;width:92px;border-radius:10px;border:1px solid var(--line);box-shadow:0 10px 24px -12px rgba(139,92,246,.65)}
+.ok-hero__text{min-width:0}
+.ok-eyebrow{margin:0 0 6px;color:var(--gold);font-size:11.5px;font-weight:900;letter-spacing:.14em}
+.ok-title{margin:0 0 6px;font-size:20px;line-height:1.3;letter-spacing:-.02em;font-weight:900}
+.ok-tags{margin:0 0 6px;color:var(--muted);font-size:12.5px}
+.ok-desc{margin:0 0 12px;color:#cfc9dd;font-size:13.5px;line-height:1.6}
+.ok-actions{display:flex;flex-wrap:wrap;gap:8px}
+.ok-btn{display:inline-block;padding:11px 16px;border-radius:12px;font-weight:800;font-size:14px;border:1px solid transparent;transition:transform .12s}
+.ok-btn:hover{transform:translateY(-1px)}
+.ok-btn--red{background:linear-gradient(135deg,var(--red),#ff6b6b);color:#fff;box-shadow:0 10px 24px -12px rgba(228,58,68,.8)}
+.ok-btn--gold{background:linear-gradient(135deg,var(--gold),#ffd97a);color:#140f20}
+.ok-btn--ghost{background:transparent;border-color:var(--line);color:var(--ink)}
+.ok-menu{width:min(760px,calc(100% - 28px));margin:14px auto 0;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.ok-menu__card{display:block;background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;min-width:0;transition:transform .12s}
+.ok-menu__card:hover,.ok-menu__card:focus{transform:translateY(-2px);border-color:var(--purple)}
+.ok-menu__card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+.ok-menu__body{display:block;padding:10px 12px 12px}
+.ok-menu__body b{display:block;font-size:13.5px;line-height:1.35}
+.ok-menu__body i{display:block;margin-top:3px;font-style:normal;font-size:11.5px;color:var(--muted)}
+.ok-chips{width:min(760px,calc(100% - 28px));margin:10px auto 0;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:2px}
+.ok-chips::-webkit-scrollbar{display:none}
+.ok-chips a{flex:0 0 auto;padding:8px 13px;border-radius:999px;background:var(--soft);border:1px solid var(--line);font-size:12.5px;font-weight:700;color:var(--muted)}
+.ok-chips a:hover,.ok-chips a:focus{color:#fff;border-color:var(--gold)}
+.ok-main{width:min(760px,calc(100% - 28px));margin:18px auto 40px}
+.ok-feed__title{margin:6px 0 12px;font-size:13px;letter-spacing:.14em;color:var(--muted);font-weight:900}
+.post-outer-container,.post-outer{margin:0 0 16px}
+.post{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px 14px;box-shadow:0 12px 30px -22px rgba(0,0,0,.9)}
+.post-title{margin:0 0 6px;font-size:18px;line-height:1.4;font-weight:900;letter-spacing:-.01em}
+.post-title a{color:#fff}
+.post-title a:hover{color:var(--gold)}
+.post-header,.post-footer{color:var(--muted);font-size:12.5px}
+.post-header{margin:0 0 10px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.post-body{font-size:15.5px;color:#e9e6f2}
+.post-body p{margin:0 0 14px}
+.post-body iframe{width:100%;aspect-ratio:16/9;height:auto;border-radius:12px}
+.post-labels{margin:12px 0 0;display:flex;flex-wrap:wrap;gap:6px}
+.post-labels a{background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:4px 10px;font-size:12px;color:var(--muted)}
+.post-comment-link{font-size:12.5px;color:var(--muted)}
+.blog-pager{display:flex;justify-content:center;gap:10px;margin:18px 0 0;flex-wrap:wrap}
+.blog-pager a{padding:11px 18px;border-radius:12px;background:var(--soft);border:1px solid var(--line);font-weight:800;font-size:14px;color:var(--ink)}
+.blog-pager a:hover{border-color:var(--purple)}
+.ok-foot{border-top:1px solid var(--line);background:#0c0812;padding:26px 14px 40px;text-align:center}
+.ok-foot__novel{margin:0 0 12px;color:var(--muted);font-size:13.5px}
+.ok-foot__novel b{color:var(--ink)}
+.ok-foot__btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:0 0 14px}
+.ok-foot__meta{margin:0;color:#6f6a82;font-size:12px}
+.y6p-mini{background:#fff;color:#16181d;border-radius:16px;padding:18px;font-size:14px;line-height:1.8}
+.y6p-mini h4{margin:0 0 8px;font-size:17px}
+.y6p-mini .shop{margin:12px 0 0;padding:12px;border:1px solid #e6e8eb;border-radius:12px;background:#fafbfc;text-align:center;font-size:13px}
+@media(min-width:768px){.ok-title{font-size:26px}.ok-hero__cover{flex:0 0 120px;width:120px}.ok-desc{font-size:15px}.post{padding:22px 24px}.post-title{font-size:21px}.ok-menu__body b{font-size:15px}.ok-menu__body i{font-size:12.5px}}
+@media(max-width:420px){.ok-menu{gap:8px}.ok-menu__body{padding:8px 10px 10px}.ok-menu__body b{font-size:12.5px}.ok-hero__card{padding:14px;gap:12px}}
+</style>
+</head>
+<body>
+<header class="ok-top">
+  <div class="ok-top__in">
+    <a class="ok-brand" href="#"><i>⚡</i>ST011 노벨피아</a>
+    <nav class="ok-nav" aria-label="메뉴">
+      <a href="#">홈</a>
+      <a href="https://www.youtube.com/playlist?list=PLRJI6sIC6s7Q" target="_blank" rel="noopener">▶ 재생목록</a>
+      <a href="https://okluckday9009.blogspot.com/2026/10/blog-post.html">노래방 가이드</a>
+      <a href="https://okluckday9009.blogspot.com/2026/10/blog-post_02.html">한국 70곡</a>
+      <a href="https://okluckday9009.blogspot.com/2026/10/blog-post_137.html">일본 목록</a>
+      <a class="ok-nav--cta" href="https://novelpia.com/novel/458237" target="_blank" rel="noopener">📖 노벨피아</a>
+    </nav>
+  </div>
+</header>
+
+<section class="ok-hero">
+  <a class="ok-hero__art" href="https://novelpia.com/novel/458237" target="_blank" rel="noopener">
+    <img alt="외계 침략자들의 머리통을 깨부수는 중입니다 · 노벨피아" src="../assets/hero_novelpia.png">
+  </a>
+  <div class="ok-hero__card">
+    <img alt="표지" class="ok-hero__cover" src="../assets/cover.jpg">
+    <div class="ok-hero__text">
+      <p class="ok-eyebrow">NOVELPIA · 웹소설 · 전연령</p>
+      <h1 class="ok-title">외계 침략자들의 머리통을 깨부수는 중입니다</h1>
+      <p class="ok-tags">#판타지 #SF #하렘 #무협 #사이다 #선협</p>
+      <p class="ok-desc">무림의 머리통을 깨부수며 성장하는 주인공의 사이다 활극. 지금 노벨피아에서 무료로 읽어보세요.</p>
+      <div class="ok-actions">
+        <a class="ok-btn ok-btn--red" href="https://novelpia.com/novel/458237" target="_blank" rel="noopener">📖 무료로 읽기</a>
+        <a class="ok-btn ok-btn--ghost" href="#ok-main">최신 글 보기 ▾</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ok-menu" aria-label="바로가기">
+  <a class="ok-menu__card" href="https://www.youtube.com/playlist?list=PLRJI6sIC6s7Q" target="_blank" rel="noopener">
+    <img alt="일본애니 YouTube 재생목록" src="https://i.ytimg.com/vi/Z-WdGYi9Pv4/mqdefault.jpg">
+    <span class="ok-menu__body">
+      <b>▶ YouTube 재생목록</b>
+      <i>일본애니 반주곡 전 모음</i>
+    </span>
+  </a>
+  <a class="ok-menu__card" href="https://novelpia.com/novel/458237" target="_blank" rel="noopener">
+    <img alt="노벨피아 · 외계 침략자들의 머리통을 깨부수는 중입니다" src="../assets/hero_novelpia.png">
+    <span class="ok-menu__body">
+      <b>📖 노벨피아 무료로 읽기</b>
+      <i>원작 웹소설 · 전연령</i>
+    </span>
+  </a>
+</section>
+<div class="ok-chips" aria-label="노래방 가이드">
+  <a href="https://okluckday9009.blogspot.com/2026/10/blog-post.html">🎯 노래방 가이드</a>
+  <a href="https://okluckday9009.blogspot.com/2026/10/blog-post_02.html">🇰🇷 한국 70곡</a>
+  <a href="https://okluckday9009.blogspot.com/2026/10/blog-post_137.html">🇯🇵 일본 목록</a>
+</div>
+
+<main class="ok-main" id="ok-main">
+  <h2 class="ok-feed__title">최신 반주곡 · 노래방 반주곡</h2>
+
+  <div class="post-outer-container"><div class="post-outer"><article class="post hentry">
+    <h3 class="post-title entry-title"><a href="#">[TJ 25465] SIAM SHADE - Rain</a></h3>
+    <div class="post-header"><span class="post-timestamp">10월 13, 2026</span></div>
+    <div class="post-body entry-content">
+      <div class="y6p-mini">
+        <h4>SIAM SHADE 「Rain」</h4>
+        <p>아래 플레이어에서 원곡을 바로 들으며 연습할 수 있습니다. (실제 글에는 YouTube 플레이어·쿠팡·소설 링크가 들어갑니다)</p>
+        <div class="shop">🛒 노래방 마이크·스피커 더 보고 싶다면 · 쿠팡에서 보기 →</div>
+      </div>
+    </div>
+    <div class="post-footer">
+      <div class="post-labels"><a href="#">노래방</a><a href="#">반주곡</a><a href="#">일본노래방</a></div>
+      <a class="post-comment-link" href="#">0개의 덧글</a>
+    </div>
+  </article></div></div>
+
+  <div class="post-outer-container"><div class="post-outer"><article class="post hentry">
+    <h3 class="post-title entry-title"><a href="#">[TJ 25528] SIAM SHADE - RISK</a></h3>
+    <div class="post-header"><span class="post-timestamp">10월 13, 2026</span></div>
+    <div class="post-body entry-content">
+      <div class="y6p-mini">
+        <h4>SIAM SHADE 「RISK」</h4>
+        <p>글 상단에 유튜브 플레이어 자리 — 모바일에서 16:9로 화면 폭에 맞춰 표시됩니다.</p>
+      </div>
+    </div>
+    <div class="post-footer">
+      <div class="post-labels"><a href="#">노래방</a><a href="#">반주곡</a><a href="#">일본노래방</a></div>
+      <a class="post-comment-link" href="#">0개의 덧글</a>
+    </div>
+  </article></div></div>
+
+  <div class="blog-pager"><a href="#">◂ 최신 글</a><a href="#">이전 글 ▸</a></div>
+</main>
+
+<footer class="ok-foot">
+  <p class="ok-foot__novel">📖 원작 웹소설 <b>외계 침략자들의 머리통을 깨부수는 중입니다</b></p>
+  <div class="ok-foot__btns">
+    <a class="ok-btn ok-btn--gold" href="https://novelpia.com/novel/458237" target="_blank" rel="noopener">노벨피아에서 무료로 읽기</a>
+    <a class="ok-btn ok-btn--ghost" href="https://www.youtube.com/playlist?list=PLRJI6sIC6s7Q" target="_blank" rel="noopener">▶ YouTube 재생목록</a>
+  </div>
+  <p class="ok-foot__meta">© okluckday9009 · 노래방 반주곡 · 이 포스팅은 쿠팡 파트너스 제휴 링크를 포함합니다.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:version='2' class='v2' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+  <meta charset='UTF-8'/>
+  <meta content='width=device-width, initial-scale=1' name='viewport'/>
+  <b:include data='blog' name='all-head-content'/>
+  <title><data:blog.pageTitle/></title>
+  <b:if cond='data:blog.metaDescription'>
+    <meta expr:content='data:blog.metaDescription' name='description'/>
+  </b:if>
+  <meta content='website' property='og:type'/>
+  <meta expr:content='data:blog.pageTitle' property='og:title'/>
+  <meta content='https://nicewjs0526-sudo.github.io/st011-homepage/assets/hero_novelpia.png' property='og:image'/>
+  <meta content='summary_large_image' name='twitter:card'/>
+  <link href='https://fonts.googleapis.com' rel='preconnect'/>
+  <link crossorigin='anonymous' href='https://fonts.gstatic.com' rel='preconnect'/>
+  <link href='https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&amp;display=swap' rel='stylesheet'/>
+  <b:skin><![CDATA[
+/* ============================================================
+   okluckday9009 · 모바일 우선 웹소설 블로그 테마 (ST011 · 노벨피아)
+   배경 짙은 보라 — 대문에 주인공(표지·배너) 이미지
+   색은 :root 의 변수만 바꾸면 전체가 바뀐다
+   ============================================================ */
+:root{
+  --bg:#0f0b16;          /* 페이지 배경 */
+  --panel:#181423;       /* 카드 */
+  --soft:#221b31;        /* 서브 카드/칩 */
+  --line:#332a46;        /* 테두리 */
+  --ink:#f5f5f7;         /* 본문 글자 */
+  --muted:#a1a1b5;       /* 보조 글자 */
+  --gold:#f5c451;        /* 강조(금색) */
+  --red:#e43a44;         /* CTA(빨강) */
+  --purple:#8b5cf6;      /* 보라 */
+  --radius:16px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:'Noto Sans KR',system-ui,-apple-system,'Malgun Gothic',sans-serif;
+  font-size:16px;line-height:1.7;word-break:keep-all;overflow-wrap:break-word}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+iframe{max-width:100%;border:0}
+#navbar-iframe{display:none}
+.ok-skip{position:absolute;left:-9999px}
+.ok-skip:focus{position:fixed;left:12px;top:12px;z-index:99;background:var(--gold);color:#100b16;
+  padding:10px 14px;border-radius:10px;font-weight:700}
+
+/* ── 상단바 (모바일은 가로 스크롤 칩) ─────────────────────── */
+.ok-top{position:sticky;top:0;z-index:20;background:rgba(15,11,22,.94);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.ok-top__in{width:min(760px,100%);margin:0 auto;display:flex;align-items:center;
+  gap:10px;padding:10px 14px}
+.ok-brand{display:flex;align-items:center;gap:8px;font-weight:900;white-space:nowrap;font-size:15px}
+.ok-brand i{display:grid;place-items:center;width:28px;height:28px;border-radius:9px;
+  background:linear-gradient(135deg,var(--purple),var(--red));font-style:normal;font-size:15px}
+.ok-nav{margin-left:auto;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:2px}
+.ok-nav::-webkit-scrollbar{display:none}
+.ok-nav a{flex:0 0 auto;padding:7px 12px;border-radius:999px;background:var(--soft);
+  border:1px solid var(--line);color:var(--muted);font-size:13px;font-weight:700}
+.ok-nav a:hover,.ok-nav a:focus{color:#fff;border-color:var(--purple)}
+.ok-nav a.ok-nav--cta{background:linear-gradient(135deg,var(--red),#ff6b6b);color:#fff;border-color:transparent}
+
+/* ── 대문 (홈에서만) ──────────────────────────────────────── */
+.ok-hero{position:relative}
+.ok-hero__art{display:block;line-height:0}
+.ok-hero__art img{width:100%;aspect-ratio:1600/864;object-fit:cover;object-position:center}
+.ok-hero__art:after{content:'';position:absolute;left:0;right:0;bottom:0;height:38%;
+  background:linear-gradient(180deg,rgba(15,11,22,0),var(--bg));pointer-events:none}
+.ok-hero__card{width:min(760px,calc(100% - 28px));margin:-30px auto 0;position:relative;z-index:1;
+  display:flex;gap:14px;padding:16px;background:linear-gradient(160deg,#1d1530,#140f20);
+  border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:0 18px 40px -20px rgba(0,0,0,.85)}
+.ok-hero__cover{flex:0 0 92px;width:92px;border-radius:10px;border:1px solid var(--line);
+  box-shadow:0 10px 24px -12px rgba(139,92,246,.65)}
+.ok-hero__text{min-width:0}
+.ok-eyebrow{margin:0 0 6px;color:var(--gold);font-size:11.5px;font-weight:900;letter-spacing:.14em}
+.ok-title{margin:0 0 6px;font-size:20px;line-height:1.3;letter-spacing:-.02em;font-weight:900}
+.ok-tags{margin:0 0 6px;color:var(--muted);font-size:12.5px}
+.ok-desc{margin:0 0 12px;color:#cfc9dd;font-size:13.5px;line-height:1.6}
+.ok-actions{display:flex;flex-wrap:wrap;gap:8px}
+.ok-btn{display:inline-block;padding:11px 16px;border-radius:12px;font-weight:800;font-size:14px;
+  border:1px solid transparent;transition:transform .12s}
+.ok-btn:hover{transform:translateY(-1px)}
+.ok-btn--red{background:linear-gradient(135deg,var(--red),#ff6b6b);color:#fff;
+  box-shadow:0 10px 24px -12px rgba(228,58,68,.8)}
+.ok-btn--gold{background:linear-gradient(135deg,var(--gold),#ffd97a);color:#140f20}
+.ok-btn--ghost{background:transparent;border-color:var(--line);color:var(--ink)}
+
+/* ── 대문 아래 이미지 메뉴 (유튜브 재생목록 · 노벨피아) ───────── */
+.ok-menu{width:min(760px,calc(100% - 28px));margin:14px auto 0;
+  display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.ok-menu__card{display:block;background:var(--panel);border:1px solid var(--line);
+  border-radius:14px;overflow:hidden;min-width:0;transition:transform .12s}
+.ok-menu__card:hover,.ok-menu__card:focus{transform:translateY(-2px);border-color:var(--purple)}
+.ok-menu__card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+.ok-menu__body{display:block;padding:10px 12px 12px}
+.ok-menu__body b{display:block;font-size:13.5px;line-height:1.35}
+.ok-menu__body i{display:block;margin-top:3px;font-style:normal;font-size:11.5px;color:var(--muted)}
+.ok-chips{width:min(760px,calc(100% - 28px));margin:10px auto 0;display:flex;gap:8px;
+  overflow-x:auto;scrollbar-width:none;padding:2px}
+.ok-chips::-webkit-scrollbar{display:none}
+.ok-chips a{flex:0 0 auto;padding:8px 13px;border-radius:999px;background:var(--soft);
+  border:1px solid var(--line);font-size:12.5px;font-weight:700;color:var(--muted)}
+.ok-chips a:hover,.ok-chips a:focus{color:#fff;border-color:var(--gold)}
+
+/* ── 본문/글 카드 (Blogger 기본 글 마크업 기준) ──────────────── */
+.ok-main{width:min(760px,calc(100% - 28px));margin:18px auto 40px}
+.ok-feed__title{margin:6px 0 12px;font-size:13px;letter-spacing:.14em;color:var(--muted);font-weight:900}
+.post-outer-container,.post-outer{margin:0 0 16px}
+.post{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px 14px;box-shadow:0 12px 30px -22px rgba(0,0,0,.9)}
+.post-title{margin:0 0 6px;font-size:18px;line-height:1.4;font-weight:900;letter-spacing:-.01em}
+.post-title a{color:#fff}
+.post-title a:hover{color:var(--gold)}
+.post-header,.post-footer{color:var(--muted);font-size:12.5px}
+.post-header{margin:0 0 10px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.post-body{font-size:15.5px;color:#e9e6f2}
+.post-body p{margin:0 0 14px}
+.post-body iframe{width:100%;aspect-ratio:16/9;height:auto;border-radius:12px}
+.post-body table{width:100%;border-collapse:collapse}
+.post-body td,.post-body th{border:1px solid var(--line);padding:6px 8px;font-size:13px}
+.post-labels{margin:12px 0 0;display:flex;flex-wrap:wrap;gap:6px}
+.post-labels a,.post-labels .label-holder{background:var(--soft);border:1px solid var(--line);
+  border-radius:999px;padding:4px 10px;font-size:12px;color:var(--muted)}
+.post-comment-link,.post-timestamp{font-size:12.5px;color:var(--muted)}
+.jump-link{color:var(--gold);font-size:13px;font-weight:700}
+.feed-links,.blog-feeds,.home-link{display:none}
+
+/* 페이지 이동 */
+.blog-pager{display:flex;justify-content:center;gap:10px;margin:18px 0 0;flex-wrap:wrap}
+.blog-pager a{padding:11px 18px;border-radius:12px;background:var(--soft);border:1px solid var(--line);
+  font-weight:800;font-size:14px;color:var(--ink)}
+.blog-pager a:hover{border-color:var(--purple)}
+
+/* 댓글 */
+#comments{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px 14px;margin:16px 0 0}
+.comments .comment-thread{margin:0}
+#comments h4{margin:0 0 12px;font-size:15px}
+.comment{border-top:1px solid var(--line);padding:10px 0}
+.comment .comment-block{background:var(--soft);border-radius:12px;padding:10px 12px}
+
+/* 푸터 */
+.ok-foot{border-top:1px solid var(--line);background:#0c0812;padding:26px 14px 40px;text-align:center}
+.ok-foot__novel{margin:0 0 12px;color:var(--muted);font-size:13.5px}
+.ok-foot__novel b{color:var(--ink)}
+.ok-foot__btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:0 0 14px}
+.ok-foot__meta{margin:0;color:#6f6a82;font-size:12px}
+
+/* 넓은 화면(데스크톱)에서도 가운데 정렬 */
+@media(min-width:768px){
+  .ok-title{font-size:26px}
+  .ok-hero__cover{flex:0 0 120px;width:120px}
+  .ok-desc{font-size:15px}
+  .post{padding:22px 24px}
+  .post-title{font-size:21px}
+  .ok-menu__body b{font-size:15px}
+  .ok-menu__body i{font-size:12.5px}
+}
+@media(max-width:420px){
+  .ok-menu{gap:8px}
+  .ok-menu__body{padding:8px 10px 10px}
+  .ok-menu__body b{font-size:12.5px}
+  .ok-hero__card{padding:14px;gap:12px}
+}
+]]></b:skin>
+</head>
+<body class='ok-body'>
+<a class='ok-skip' href='#ok-main'>본문 바로가기</a>
+
+<!-- ── 상단바 ─────────────────────────────────────────────── -->
+<header class='ok-top'>
+  <div class='ok-top__in'>
+    <a class='ok-brand' expr:href='data:blog.homepageUrl'><i>⚡</i>ST011 노벨피아</a>
+    <nav class='ok-nav' aria-label='메뉴'>
+      <a expr:href='data:blog.homepageUrl'>홈</a>
+      <a href='https://www.youtube.com/playlist?list=PLRJI6sIC6s7Q' rel='noopener' target='_blank'>▶ 재생목록</a>
+      <a href='https://okluckday9009.blogspot.com/2026/10/blog-post.html'>노래방 가이드</a>
+      <a href='https://okluckday9009.blogspot.com/2026/10/blog-post_02.html'>한국 70곡</a>
+      <a href='https://okluckday9009.blogspot.com/2026/10/blog-post_137.html'>일본 목록</a>
+      <a class='ok-nav--cta' href='https://novelpia.com/novel/458237' rel='noopener' target='_blank'>📖 노벨피아</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ── 대문 (홈에서만) : st011 주인공(표지·배너) 이미지 ──────── -->
+<b:if cond='data:blog.url == data:blog.homepageUrl'>
+  <section class='ok-hero'>
+    <a class='ok-hero__art' href='https://novelpia.com/novel/458237' rel='noopener' target='_blank'>
+      <img alt='외계 침략자들의 머리통을 깨부수는 중입니다 · 노벨피아' height='864'
+           src='https://nicewjs0526-sudo.github.io/st011-homepage/assets/hero_novelpia.png'
+           title='노벨피아에서 무료로 읽기' width='1600'/>
+    </a>
+    <div class='ok-hero__card'>
+      <img alt='외계 침략자들의 머리통을 깨부수는 중입니다 표지' class='ok-hero__cover' height='600'
+           loading='lazy' src='https://nicewjs0526-sudo.github.io/st011-homepage/assets/cover.jpg' width='400'/>
+      <div class='ok-hero__text'>
+        <p class='ok-eyebrow'>NOVELPIA · 웹소설 · 전연령</p>
+        <h1 class='ok-title'>외계 침략자들의 머리통을 깨부수는 중입니다</h1>
+        <p class='ok-tags'>#판타지 #SF #하렘 #무협 #사이다 #선협</p>
+        <p class='ok-desc'>무림의 머리통을 깨부수며 성장하는 주인공의 사이다 활극. 지금 노벨피아에서 무료로 읽어보세요.</p>
+        <div class='ok-actions'>
+          <a class='ok-btn ok-btn--red' href='https://novelpia.com/novel/458237' rel='noopener' target='_blank'>📖 무료로 읽기</a>
+          <a class='ok-btn ok-btn--ghost' href='#ok-main'>최신 글 보기 ▾</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class='ok-menu' aria-label='바로가기'>
+    <a class='ok-menu__card' href='https://www.youtube.com/playlist?list=PLRJI6sIC6s7Q' rel='noopener' target='_blank'>
+      <img alt='일본애니 YouTube 재생목록' height='180' loading='lazy'
+           src='https://i.ytimg.com/vi/Z-WdGYi9Pv4/mqdefault.jpg' width='320'/>
+      <span class='ok-menu__body'>
+        <b>▶ YouTube 재생목록</b>
+        <i>일본애니 반주곡 전 모음</i>
+      </span>
+    </a>
+    <a class='ok-menu__card' href='https://novelpia.com/novel/458237' rel='noopener' target='_blank'>
+      <img alt='노벨피아 · 외계 침략자들의 머리통을 깨부수는 중입니다' height='864' loading='lazy'
+           src='https://nicewjs0526-sudo.github.io/st011-homepage/assets/hero_novelpia.png' width='1600'/>
+      <span class='ok-menu__body'>
+        <b>📖 노벨피아 무료로 읽기</b>
+        <i>원작 웹소설 · 전연령</i>
+      </span>
+    </a>
+  </section>
+  <div class='ok-chips' aria-label='노래방 가이드'>
+    <a href='https://okluckday9009.blogspot.com/2026/10/blog-post.html'>🎯 노래방 가이드</a>
+    <a href='https://okluckday9009.blogspot.com/2026/10/blog-post_02.html'>🇰🇷 한국 70곡</a>
+    <a href='https://okluckday9009.blogspot.com/2026/10/blog-post_137.html'>🇯🇵 일본 목록</a>
+  </div>
+</b:if>
+
+<!-- ── 글 목록 ────────────────────────────────────────────── -->
+<main class='ok-main' id='ok-main'>
+  <h2 class='ok-feed__title'>최신 반주곡 · 노래방 반주곡</h2>
+  <b:section class='ok-feed' id='main' showaddelement='no'>
+    <b:widget id='Blog1' locked='true' title='게시물' type='Blog' version='2'/>
+  </b:section>
+</main>
+
+<!-- ── 푸터 ───────────────────────────────────────────────── -->
+<footer class='ok-foot'>
+  <p class='ok-foot__novel'>📖 원작 웹소설 <b>외계 침략자들의 머리통을 깨부수는 중입니다</b></p>
+  <div class='ok-foot__btns'>
+    <a class='ok-btn ok-btn--gold' href='https://novelpia.com/novel/458237' rel='noopener' target='_blank'>노벨피아에서 무료로 읽기</a>
+    <a class='ok-btn ok-btn--ghost' href='https://www.youtube.com/playlist?list=PLRJI6sIC6s7Q' rel='noopener' target='_blank'>▶ YouTube 재생목록</a>
+  </div>
+  <p class='ok-foot__meta'>© <data:blog.title/> · 노래방 반주곡 · 이 포스팅은 쿠팡 파트너스 제휴 링크를 포함합니다.</p>
+</footer>
+
+</body>
+</html>
+
